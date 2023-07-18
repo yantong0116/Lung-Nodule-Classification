@@ -80,7 +80,7 @@ for pth_number in range(10):
     
     val_set = TensorDataset(val_imgs)
     val_loader = DataLoader(val_set, shuffle=False)
-    pred_all.append(test(val_loader=val_loader, model=DINet2c(2, 1), fold=pth_number))
+    pred_all.append(test(val_loader=val_loader, model=MDINet2c(2, 1), fold=pth_number))
 
 for i in range(len(imgs_path)): 
     result = 'Benign'
