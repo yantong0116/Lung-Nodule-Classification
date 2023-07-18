@@ -19,6 +19,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: testing lung nodule
         run: | 
+          pip install -r requirements.txt
           python testing.py
           git add . 
           git commit -m "update predict"
