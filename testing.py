@@ -34,9 +34,9 @@ def test(val_loader, model, fold):
     set_randomSeed()
     preds_list = []
 
-    model.load_state_dict(torch.load('./model_10_pth/' + str('fold_') + str(fold+1) + '.pth'))
+    model.load_state_dict(torch.load('./model_10_pth/' + str('fold_') + str(fold+1) + '.pth', map_location=torch.device('cpu')))
 
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('cpu')
     model.to(device)
 
     with torch.no_grad():
