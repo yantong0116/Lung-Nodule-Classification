@@ -21,8 +21,8 @@ jobs:
         run: | 
           pip install -r requirements.txt
           python testing.py
-          git config --global user.email "yantong914@gmail.com"
-          git config --global user.name "Yantong"
+          git config --global user.email "mayta51654944@gmail.com"
+          git config --global user.name "yantong0116"
           git add . 
           git commit -m "update predict"
           git push
