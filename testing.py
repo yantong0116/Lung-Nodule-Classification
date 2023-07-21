@@ -1,14 +1,23 @@
+import os
 import numpy as np
 import csv
+import matplotlib.pyplot as plt
+import random
+import torch
 import warnings
 warnings.filterwarnings("ignore")
 
 from glob import glob
-from utils import *
 from torch.utils.data import DataLoader, TensorDataset
 from MDINet2c import MDINet2c
 
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+
+def set_randomSeed(SEED=11):
+    random.seed(SEED)
+    np.random.seed(SEED)
+    torch.manual_seed(SEED)
+    torch.backends.cudnn.deterministic = True
 
 def load_data(index, imgs_path):
     imgs = {}
